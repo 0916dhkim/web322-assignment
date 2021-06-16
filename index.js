@@ -21,7 +21,15 @@ app.use(express.static('public'));
 
 // Routes.
 app.get('/', (req, res) => {
-  res.render('home');
+  res.render(
+    'home',
+    {
+      navs: [
+        { label: 'Find Rooms', href: '#' },
+        { label: 'Sign Up', href: '#' },
+      ],
+    },
+  );
 });
 
 // Start server.
