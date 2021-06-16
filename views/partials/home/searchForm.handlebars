@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/styles/home/searchForm.css" />
+<form>
+  {{#> input name="city" label="WHERE"}}
+  <select name="city">
+    <option value="toronto">Toronto</option>
+    <option value="vancouver">Vancouver</option>
+  </select>
+  {{/input}}
+  {{#> input name="date-start" label="CHECK-IN"}}
+  <input type="date" name="date-start" />
+  {{/input}}
+  {{#> input name="date-end" label="CHECKOUT"}}
+  <input type="date" name="date-end" />
+  {{/input}}
+  {{#> input name="guest-count" label="GUESTS"}}
+  <select name="guest-count">
+    <option value="1">1 Guest</option>
+    <option value="2">2 Guest</option>
+  </select>
+  {{/input}}
+</form>
