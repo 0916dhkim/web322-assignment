@@ -25,8 +25,9 @@ app.get('/', (req, res) => {
     'home',
     {
       navs: [
-        { label: 'Find Rooms', href: '#' },
+        { label: 'Find Rooms', href: '/' },
         { label: 'Sign Up', href: '#' },
+        { label: 'Login', href: '/login' },
       ],
       cities: [
         'Toronto',
@@ -37,6 +38,19 @@ app.get('/', (req, res) => {
         'Edmonton',
         'Halifax',
         'Winnipeg',
+      ],
+    },
+  );
+});
+
+app.get('/login', (req, res) => {
+  res.render(
+    'login',
+    {
+      navs: [
+        { label: 'Find Rooms', href: '/' },
+        { label: 'Sign Up', href: '#' },
+        { label: 'Login', href: '/login' },
       ],
     },
   );

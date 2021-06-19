@@ -11,4 +11,11 @@ div.input-root {
     font-weight: bold;
     margin-bottom: 0.25rem;
   }
+
+  input,select {
+    height: 3em;
+    border-radius: 1.5em;
+    border-style: solid;
+    padding: 0 1em;
+  }
 }
