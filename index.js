@@ -2,6 +2,7 @@ const express = require('express');
 const ExpressHandlebars = require('express-handlebars');
 const Sass = require('node-sass-middleware');
 const path = require('path');
+const getNavs = require('./getNavs');
 
 const PORT = process.env.PORT || 8082;
 
@@ -24,11 +25,7 @@ app.get('/', (req, res) => {
   res.render(
     'home',
     {
-      navs: [
-        { label: 'Find Rooms', href: '/' },
-        { label: 'Sign Up', href: '/signup' },
-        { label: 'Login', href: '/login' },
-      ],
+      navs: getNavs('/'),
       cities: [
         'Toronto',
         'Vancouver',
@@ -47,11 +44,7 @@ app.get('/login', (req, res) => {
   res.render(
     'login',
     {
-      navs: [
-        { label: 'Find Rooms', href: '/' },
-        { label: 'Sign Up', href: '/signup' },
-        { label: 'Login', href: '/login' },
-      ],
+      navs: getNavs('/login'),
     },
   );
 });
@@ -60,11 +53,7 @@ app.get('/signup', (req, res) => {
   res.render(
     'signup',
     {
-      navs: [
-        { label: 'Find Rooms', href: '/' },
-        { label: 'Sign Up', href: '/signup' },
-        { label: 'Login', href: '/login' },
-      ],
+      navs: getNavs('/signup'),
     },
   );
 });
