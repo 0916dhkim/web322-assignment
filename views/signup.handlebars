@@ -1,0 +1,24 @@
+{{> header navs=navs}}
+{{#> content}}
+<form class="signup-form">
+  {{#> input name="email" label="EMAIL"}}
+  <input type="email" name="email" />
+  {{/input}}
+  {{#> input name="firstname" label="FIRST NAME"}}
+  <input type="text" name="firstname" />
+  {{/input}}
+  {{#> input name="lastname" label="LAST NAME"}}
+  <input type="text" name="lastname" />
+  {{/input}}
+  {{#> input name="password" label="PASSWORD"}}
+  <input type="password" name="password" />
+  {{/input}}
+  {{#> input name="password-confirm" label="CONFIRM PASSWORD"}}
+  <input type="password" name="password-confirm" />
+  {{/input}}
+  {{#> input name="birthday" label="BIRTHDAY"}}
+  <input type="date" name="birthday" />
+  {{/input}}
+</form>
+{{/content}}
+{{> footer}}

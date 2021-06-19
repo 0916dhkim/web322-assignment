@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
     {
       navs: [
         { label: 'Find Rooms', href: '/' },
-        { label: 'Sign Up', href: '#' },
+        { label: 'Sign Up', href: '/signup' },
         { label: 'Login', href: '/login' },
       ],
       cities: [
@@ -49,7 +49,20 @@ app.get('/login', (req, res) => {
     {
       navs: [
         { label: 'Find Rooms', href: '/' },
-        { label: 'Sign Up', href: '#' },
+        { label: 'Sign Up', href: '/signup' },
+        { label: 'Login', href: '/login' },
+      ],
+    },
+  );
+});
+
+app.get('/signup', (req, res) => {
+  res.render(
+    'signup',
+    {
+      navs: [
+        { label: 'Find Rooms', href: '/' },
+        { label: 'Sign Up', href: '/signup' },
         { label: 'Login', href: '/login' },
       ],
     },
