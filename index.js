@@ -28,6 +28,16 @@ app.get('/', (req, res) => {
         { label: 'Find Rooms', href: '#' },
         { label: 'Sign Up', href: '#' },
       ],
+      cities: [
+        'Toronto',
+        'Vancouver',
+        'Montreal',
+        'Ottawa',
+        'Calgary',
+        'Edmonton',
+        'Halifax',
+        'Winnipeg',
+      ],
     },
   );
 });
