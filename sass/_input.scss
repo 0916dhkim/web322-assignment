@@ -1,9 +1,12 @@
+@import 'variables';
+
 div.input-root {
   display: flex;
   flex-direction: column;
   align-items: stretch;
 
   label {
+    color: $primary;
     font-size: small;
     font-weight: bold;
     margin-bottom: 0.25rem;
