@@ -1,0 +1,19 @@
+div.home-info {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .info-title {
+    font-size: xx-large;
+    font-weight: bold;
+  }
+
+  .info-section {
+    font-weight: bold;
+  }
+
+  .info-paragraph {
+    line-height: 1.4em;
+  }
+}
