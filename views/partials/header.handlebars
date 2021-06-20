@@ -4,7 +4,11 @@
   </a>
   <nav>
     {{#each navs}}
+    {{#if current}}
+    <a href={{href}} class="current">{{label}}</a>
+    {{else}}
     <a href={{href}}>{{label}}</a>
+    {{/if}}
     {{/each}}
   </nav>
   <div />

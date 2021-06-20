@@ -4,12 +4,16 @@ const NAVS = [
   { label: 'Login', href: '/login' },
 ];
 
-function getNavs(except) {
-  if (!except) {
+function getNavs(currentPath) {
+  if (!currentPath) {
     return NAVS;
   }
 
-  return NAVS.filter(({ href }) => href !== except);
+  return NAVS.map(
+    (nav) => nav.href === currentPath
+      ? { ...nav, current: true }
+      : nav
+  );
 }
 
 module.exports = getNavs;
