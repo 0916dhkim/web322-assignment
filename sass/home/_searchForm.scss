@@ -9,4 +9,8 @@ form.search-form {
     min-width: 500px;
     align-self: center;
   }
+
+  input[type=submit] {
+    align-self: flex-end;
+  }
 }
