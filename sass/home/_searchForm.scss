@@ -5,7 +5,7 @@ form.search-form {
   flex-direction: column;
   gap: 1rem;
 
-  @media only screen and (min-width: $desktop) {
+  @media only screen and (min-width: $tablet) {
     min-width: 500px;
     align-self: center;
   }

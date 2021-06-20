@@ -1,0 +1,9 @@
+{{> header navs=navs}}
+{{#> content}}
+<div class="explore-grid">
+  {{#each rooms}}
+  {{> explore/card room=this}}
+  {{/each}}
+</div>
+{{/content}}
+{{> footer}}

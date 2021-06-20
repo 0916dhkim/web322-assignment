@@ -1,5 +1,5 @@
 const NAVS = [
-  { label: 'Find Rooms', href: '/' },
+  { label: 'Find Rooms', href: '/explore' },
   { label: 'Sign Up', href: '/signup' },
   { label: 'Login', href: '/login' },
 ];

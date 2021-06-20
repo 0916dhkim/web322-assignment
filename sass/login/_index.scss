@@ -7,7 +7,7 @@ form.login-form {
 
   gap: 1rem;
 
-  @media only screen and (min-width: $desktop) {
+  @media only screen and (min-width: $tablet) {
     min-width: 20em;
     align-self: center;
   }

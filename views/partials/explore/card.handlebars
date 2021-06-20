@@ -1,0 +1,12 @@
+{{#with room}}
+<div class="card">
+  <img class="thumbnail" src={{imageUrl}} />
+  <span class="card-header">{{type}} · {{city}}</span>
+  <h1 class="card-title">{{name}}</h1>
+  <span class="price">${{rate}} CAD/night</span>
+  <span class="card-footer">
+    <span class="rating">{{rating}}</span>
+    ({{ratingCount}}) · {{#if superhost}}Superhost{{/if}}
+  </span>
+</div>
+{{/with}}

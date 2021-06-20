@@ -58,6 +58,77 @@ app.get('/signup', (req, res) => {
   );
 });
 
+app.get('/explore', (req, res) => {
+  res.render(
+    'explore',
+    {
+      navs: getNavs('/explore'),
+      rooms: [
+        {
+          name: 'Chiado Loft 7 with Patio!',
+          imageUrl: '/images/room001.jpg',
+          rate: 130,
+          rating: 4.87,
+          ratingCount: 363,
+          superhost: true,
+          type: 'Entire Apartment',
+          city: 'Lisbon',
+        },
+        {
+          name: 'Chiado Loft 7 with Patio!',
+          imageUrl: '/images/room001.jpg',
+          rate: 130,
+          rating: 4.87,
+          ratingCount: 363,
+          superhost: true,
+          type: 'Entire Apartment',
+          city: 'Lisbon',
+        },
+        {
+          name: 'Chiado Loft 7 with Patio!',
+          imageUrl: '/images/room001.jpg',
+          rate: 130,
+          rating: 4.87,
+          ratingCount: 363,
+          superhost: true,
+          type: 'Entire Apartment',
+          city: 'Lisbon',
+        },
+        {
+          name: 'Chiado Loft 7 with Patio!',
+          imageUrl: '/images/room001.jpg',
+          rate: 130,
+          rating: 4.87,
+          ratingCount: 363,
+          superhost: true,
+          type: 'Entire Apartment',
+          city: 'Lisbon',
+        },
+        {
+          name: 'Chiado Loft 7 with Patio!',
+          imageUrl: '/images/room001.jpg',
+          rate: 130,
+          rating: 4.87,
+          ratingCount: 363,
+          superhost: true,
+          type: 'Entire Apartment',
+          city: 'Lisbon',
+        },
+        {
+          name: 'Chiado Loft 7 with Patio!',
+          imageUrl: '/images/room001.jpg',
+          rate: 130,
+          rating: 4.87,
+          ratingCount: 363,
+          superhost: true,
+          type: 'Entire Apartment',
+          city: 'Lisbon',
+        },
+      ],
+    },
+  );
+});
+
 // Start server.
 app.listen(PORT, () => {
   if (process.env.NODE_ENV === 'development') {

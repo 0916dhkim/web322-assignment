@@ -1,0 +1,43 @@
+@import 'variables';
+
+div.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+
+  img.thumbnail {
+    object-fit: cover;
+
+    @media only screen and (min-width: $tablet) {
+      height: 240px;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      height: 300px;
+    }
+  }
+
+  .card-header {
+    text-transform: uppercase;
+    font-size: small;
+    font-weight: bold;
+  }
+
+  .card-title {
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .price {
+    font-size: small;
+  }
+
+  .card-footer {
+    font-size: small;
+
+    .rating {
+      font-weight: bold;
+    }
+  }
+}
