@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 div.input-root {
   display: flex;
@@ -12,10 +12,18 @@ div.input-root {
     margin-bottom: 0.25rem;
   }
 
-  input,select {
+  input,
+  select {
     height: 3em;
     border-radius: 1.5em;
     border-style: solid;
     padding: 0 1em;
+  }
+
+  .input-error {
+    color: $negative;
+    &.hidden {
+      display: none;
+    }
   }
 }
