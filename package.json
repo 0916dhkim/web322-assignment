@@ -2,14 +2,13 @@
   "name": "web322-assignment",
   "version": "1.0.0",
   "description": "Seneca College WEB322 Assignment",
-  "main": "index.js",
   "repository": "git@github.com:0916dhkim/web322-assignment.git",
   "author": "Donghyeon Kim <dkim167@myseneca.ca>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node index.js",
-    "dev": "NODE_ENV=development nodemon index.js"
+    "start": "node server.js",
+    "dev": "NODE_ENV=development nodemon server.js"
   },
   "dependencies": {
     "dotenv": "^10.0.0",

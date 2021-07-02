@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
-const hbs = require("./hbs");
+const hbs = require("../hbs");
 const {
   EMAIL_FROM,
   SMTP_HOST,
@@ -10,7 +10,7 @@ const {
   SMTP_USER,
   SMTP_PASSWORD,
   ROOT_URL,
-} = require("./constants");
+} = require("../constants");
 
 const transporter = nodemailer.createTransport({
   host: SMTP_HOST,

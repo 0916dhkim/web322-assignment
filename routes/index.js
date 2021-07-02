@@ -1,32 +1,11 @@
 const express = require("express");
-const Sass = require("node-sass-middleware");
-const path = require("path");
-const getNavs = require("./getNavs");
+const router = express.Router();
 const api = require("./api");
-const hbs = require("./hbs");
+const getNavs = require("../getNavs");
 
-const PORT = process.env.PORT || 8082;
+router.use("/api", api);
 
-const app = express();
-
-// Template engine.
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
-
-// Register middlewares.
-app.use(
-  Sass({
-    src: path.join(__dirname, "sass"),
-    dest: path.join(__dirname, "public", "styles"),
-    prefix: "/styles",
-  })
-);
-app.use(express.static("public"));
-
-app.use("/api", api);
-
-// Routes.
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.render("home", {
     navs: getNavs("/"),
     cities: [
@@ -42,19 +21,19 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/login", (req, res) => {
+router.get("/login", (req, res) => {
   res.render("login", {
     navs: getNavs("/login"),
   });
 });
 
-app.get("/signup", (req, res) => {
+router.get("/signup", (req, res) => {
   res.render("signup", {
     navs: getNavs("/signup"),
   });
 });
 
-app.get("/explore", (req, res) => {
+router.get("/explore", (req, res) => {
   res.render("explore", {
     navs: getNavs("/explore"),
     rooms: [
@@ -122,15 +101,10 @@ app.get("/explore", (req, res) => {
   });
 });
 
-app.get("/dashboard", (req, res) => {
+router.get("/dashboard", (req, res) => {
   res.render("dashboard", {
     navs: getNavs("/dashboard"),
   });
 });
 
-// Start server.
-app.listen(PORT, () => {
-  if (process.env.NODE_ENV === "development") {
-    console.log(`Listening to http://localhost:${PORT}/`);
-  }
-});
+module.exports = router;
