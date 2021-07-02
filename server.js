@@ -1,6 +1,7 @@
 const express = require("express");
 const Sass = require("node-sass-middleware");
 const path = require("path");
+const morgan = require("morgan");
 const hbs = require("./hbs");
 const router = require("./routes");
 
@@ -13,6 +14,9 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 // Register middlewares.
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 app.use(
   Sass({
     src: path.join(__dirname, "sass"),
