@@ -1,13 +1,14 @@
-@import 'reset';
-@import 'content';
-@import 'header';
-@import 'footer';
-@import 'input';
-@import 'button';
-@import 'home/index';
-@import 'login/index';
-@import 'signup/index';
-@import 'explore/index';
+@import "reset";
+@import "content";
+@import "header";
+@import "footer";
+@import "input";
+@import "button";
+@import "home/index";
+@import "login/index";
+@import "signup/index";
+@import "explore/index";
+@import "dashboard/index";
 
 body {
   min-height: 100vh;
@@ -15,5 +16,5 @@ body {
   flex-direction: column;
   align-items: stretch;
 
-  font-family: Lato, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Lato, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

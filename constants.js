@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const {
+  ROOT_URL,
   EMAIL_FROM,
   SMTP_HOST,
   SMTP_PORT,
@@ -10,6 +11,7 @@ const {
 } = process.env;
 
 module.exports = {
+  ROOT_URL,
   EMAIL_FROM,
   SMTP_HOST,
   SMTP_PORT,

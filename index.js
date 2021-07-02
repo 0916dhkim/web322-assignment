@@ -1,16 +1,16 @@
 const express = require("express");
-const ExpressHandlebars = require("express-handlebars");
 const Sass = require("node-sass-middleware");
 const path = require("path");
 const getNavs = require("./getNavs");
 const api = require("./api");
+const hbs = require("./hbs");
 
 const PORT = process.env.PORT || 8082;
 
 const app = express();
 
 // Template engine.
-app.engine("handlebars", ExpressHandlebars());
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 // Register middlewares.
@@ -119,6 +119,12 @@ app.get("/explore", (req, res) => {
         city: "Lisbon",
       },
     ],
+  });
+});
+
+app.get("/dashboard", (req, res) => {
+  res.render("dashboard", {
+    navs: getNavs("/dashboard"),
   });
 });
 

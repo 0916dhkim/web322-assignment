@@ -35,11 +35,29 @@ formValidator.setValidator("password-confirm", (value) => {
 
 const signupForm = document.querySelector("form.signup-form");
 
-const onSubmit = (e) => {
+const onSubmit = async (e) => {
   e.preventDefault();
 
   // Validate
   const valid = formValidator.validate();
+
+  if (!valid) return;
+
+  const res = await fetch(`/api/signup`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: formValidator.getValue("email"),
+      firstname: formValidator.getValue("firstname"),
+      lastname: formValidator.getValue("lastname"),
+      password: formValidator.getValue("password"),
+    }),
+  });
+
+  // Redirect to home when sign-up is successful.
+  window.location.replace(`/`);
 };
 
 signupForm.addEventListener("submit", onSubmit);
