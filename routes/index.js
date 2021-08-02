@@ -102,8 +102,14 @@ router.get("/explore", (req, res) => {
 });
 
 router.get("/dashboard", (req, res) => {
+  if (!req.session.user) {
+    return res.sendStatus(401);
+  }
+  res.set("Cache-control", "no-store max-age=0");
   res.render("dashboard", {
     navs: getNavs("/dashboard"),
+    firstname: req.session.user.firstname,
+    lastname: req.session.user.lastname,
   });
 });
 

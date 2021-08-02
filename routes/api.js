@@ -1,4 +1,6 @@
 const express = require("express");
+const bcrypt = require("bcrypt");
+const { User } = require("../model");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 const hbs = require("../hbs");
@@ -35,6 +37,12 @@ router.use(express.json());
 
 router.post("/signup", async (req, res) => {
   try {
+    const userData = {
+      ...req.body,
+      password: await bcrypt.hash(req.body.password, 10),
+    };
+    const user = new User(userData);
+    await user.save();
     const welcomeHtml = await hbs.render("views/firststeps.handlebars", {
       firstname: req.body.firstname,
       redirect: `${ROOT_URL}/dashboard`,
@@ -67,6 +75,32 @@ router.post("/signup", async (req, res) => {
     console.error(err);
     res.status(500).json({ err });
   }
+});
+
+router.post("/login", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      email: req.body.email,
+    });
+    console.log(user.password);
+    if (!(await bcrypt.compare(req.body.password, user.password))) {
+      return res.json({
+        err: "Invalid status code.",
+      });
+    }
+    // Login success.
+    req.session.user = user;
+    return res.send("Login success.");
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ err });
+  }
+});
+
+router.post("/logout", (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
 });
 
 router.get("/mailtest", async (req, res) => {

@@ -8,6 +8,8 @@ const {
   SMTP_SECURE,
   SMTP_USER,
   SMTP_PASSWORD,
+  SESSION_SECRET,
+  DATABASE_URL,
 } = process.env;
 
 module.exports = {
@@ -18,4 +20,6 @@ module.exports = {
   SMTP_SECURE,
   SMTP_USER,
   SMTP_PASSWORD,
+  SESSION_SECRET,
+  DATABASE_URL,
 };

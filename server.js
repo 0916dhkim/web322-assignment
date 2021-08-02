@@ -4,6 +4,8 @@ const path = require("path");
 const morgan = require("morgan");
 const hbs = require("./hbs");
 const router = require("./routes");
+const session = require("express-session");
+const { SESSION_SECRET } = require("./constants");
 
 const PORT = process.env.PORT || 8082;
 
@@ -17,6 +19,13 @@ app.set("view engine", "handlebars");
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+app.use(
+  session({
+    secret: SESSION_SECRET,
+    resave: true,
+    saveUninitialized: false,
+  })
+);
 app.use(
   Sass({
     src: path.join(__dirname, "sass"),
